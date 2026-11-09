@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Text polish">
+  <rect width="64" height="64" rx="14" fill="#1c4f8a"/>
+  <path d="M24 10l4.6 14.4L43 29l-14.4 4.6L24 48l-4.6-14.4L5 29l14.4-4.6z" fill="#ffffff"/>
+  <path d="M47 33l2.9 9.1L59 45l-9.1 2.9L47 57l-2.9-9.1L35 45l9.1-2.9z" fill="#9ecbff"/>
+</svg>

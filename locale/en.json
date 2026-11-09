@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Text Polish",
+    "description": "Adds a Polish/Expand button to the composer: it rewrites the draft in place, and expands a task-like draft into a detailed request."
+  }
+}
