@@ -1,0 +1,82 @@
+{
+  // npm/DSH 识别的插件包名称。
+  "name": "dsh-text-polish",
+  // 当前插件包版本号。
+  "version": "1.0.0",
+  // 插件包的简短说明，供包管理器或插件目录展示。
+  "description": "Composer button for DeepSeek Harness: rewrite the draft in place — polish ordinary prose, expand a task into a detailed request.",
+  // 指定 Node.js 将本包中的 .js 文件按 ES 模块语法加载。
+  "type": "module",
+  // 声明本项目采用 MIT 开源许可证。
+  "license": "MIT",
+  // 包的检索关键词，便于在包仓库中搜索和分类。
+  "keywords": [
+    // 以下各项是本插件的主题和用途标签。
+    "dsh-text-polish",
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "bundle",
+    "prompt",
+    "polish",
+    "expand",
+    "composer"
+  ],
+  // 项目源码仓库的类型及地址。
+  "repository": {
+    // 指明仓库托管类型为 Git。
+    "type": "git",
+    // 项目 Git 仓库地址。
+    "url": "git+https://github.com/caiyueliang/dsh-text-polish.git"
+  },
+  // 项目主页地址，指向 GitHub 仓库的 README。
+  "homepage": "https://github.com/caiyueliang/dsh-text-polish#readme",
+  // 项目问题反馈入口。
+  "bugs": {
+    // GitHub Issues 页面地址。
+    "url": "https://github.com/caiyueliang/dsh-text-polish/issues"
+  },
+  // 定义包名可导入的公开子路径及其对应文件。
+  "exports": {
+    // 导入包根路径时使用 Host 端入口文件。
+    ".": "./index.js",
+    // 导入包的 /client 子路径时使用浏览器端入口文件。
+    "./client": "./client.js",
+    // 导入此子路径时使用 bundle 插件列表补丁配置。
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    // 允许按 locale/*.json 子路径导入语言资源文件。
+    "./locale/*.json": "./locale/*.json",
+    // 导入包的 /icon 子路径时使用插件图标文件。
+    "./icon": "./icon.svg"
+  },
+  // 发布到 npm 包中的文件白名单；未列出的文件不会随包发布。
+  "files": [
+    // Host 端插件逻辑及 /polish 命令。
+    "index.js",
+    // 浏览器端输入框按钮逻辑。
+    "client.js",
+    // DSH bundle 插件列表补丁。
+    "cordis.patch.yml",
+    // 中文和英文插件元数据目录中的 JSON 文件。
+    "locale/*.json",
+    // 插件图标资源。
+    "icon.svg"
+  ],
+  // DeepSeek Harness 专用插件元数据和加载配置。
+  "dsh": {
+    // 声明本插件需要应用的 bundle 配置。
+    "bundle": {
+      // 指定 bundle patch 文件的相对路径。
+      "patch": "./cordis.patch.yml"
+    },
+    // 声明浏览器端插件的运行和注入设置。
+    "client": {
+      // 限定浏览器端插件运行在 Web 客户端。
+      "platform": "web",
+      // 页面加载插件时立即执行浏览器端入口。
+      "immediately": true,
+      // 声明注入前需加载的 DSH 会话输入框 UI 模块。
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}
